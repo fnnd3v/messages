@@ -1,8 +1,15 @@
 export const theme = {
   colors: {
-    activeUserMessage: "#3F5AEB",
-    userMessage: "#F2F2F2",
-    appBackground: "#B2BEBF",
+    border: "#B2BEBF",
+    messageFontWhite: "#F2F2F0",
+    appBackground: "#F2F2F0",
+    activeMessage: "#2196F3",
+    black: "#3B3936",
+    messagePanel: "#A9A9A9",
+    firstUserMessage: "#4481D5",
+  },
+  border: {
+    radius: "16px",
   },
   font: {
     size: {
