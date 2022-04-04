@@ -1,6 +1,6 @@
-import { user1, user2 } from "data/users";
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+
+import { user1 } from "data/users";
 
 export const MessagesContext = React.createContext({});
 

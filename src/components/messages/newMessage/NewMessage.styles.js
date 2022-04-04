@@ -36,6 +36,23 @@ export const MessageBody = styled.div`
   p {
     font-size: 14px;
   }
+
+  img {
+    width: 100%;
+  }
+`;
+
+export const ImageBody = styled.div`
+  background-color: tomato;
+  display: flex;
+  width: auto;
+  padding: 10px 20px;
+  margin: 0 10px;
+  width: 320px;
+  height: 200px;
+  border-radius: 6px;
+  background-size: cover;
+  background-image: url(${({ image }) => image});
 `;
 export const MessagePanel = styled.div`
   display: flex;

@@ -20,6 +20,6 @@ export const MessagesWrapper = styled.ul`
 `;
 
 export const EmptyP = styled.p`
-  margin: 0 auto;
+  margin: 40px auto;
   color: ${({ theme }) => theme.colors.messagePanel};
 `;

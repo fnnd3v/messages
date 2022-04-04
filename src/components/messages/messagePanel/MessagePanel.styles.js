@@ -1,16 +1,23 @@
 import styled from "styled-components";
 
 import Arrow from "assets/icons/arrow.png";
+import GalleryIcon from "assets/icons/image-gallery.png";
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.appBackground};
+  height: 10%;
+  position: relative;
+`;
 
 export const MessagePanelWrapper = styled.form`
-  height: 10%;
-  width: 100%;
-  z-index: 999;
+  padding: 20px;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.appBackground};
-  padding: 20px;
+  z-index: 999;
 
   input {
     width: 85%;
@@ -35,4 +42,13 @@ export const MessagePanelWrapper = styled.form`
     cursor: pointer;
     border-radius: 50%;
   }
+`;
+
+export const GalleryButton = styled.button`
+  background-image: url(${GalleryIcon});
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
 `;

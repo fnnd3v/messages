@@ -7,6 +7,7 @@ import EditMessagePanel from "./EditMessagePanel/EditMessagePanel";
 import {
   ContentWrapper,
   DateP,
+  ImageBody,
   MessageBody,
   MessagePanel,
   ProfilePicture,
@@ -37,24 +38,30 @@ const NewMessage = ({
     <Wrapper isFirstUser={isFirstUser}>
       <ProfilePicture src={profilePhoto} />
       <ContentWrapper>
-        <MessageBody isFirstUser={isFirstUser}>
-          <h5>
-            {name} {surname}
-          </h5>
-          {isEdit ? (
-            <EditMessagePanel message={message} setIsEdit={setIsEdit} />
-          ) : (
-            <p> {content}</p>
-          )}
-        </MessageBody>
+        {img ? (
+          <ImageBody isFirstUser={isFirstUser} image={img}></ImageBody>
+        ) : (
+          <MessageBody isFirstUser={isFirstUser}>
+            <h5>
+              {name} {surname}
+            </h5>
+            {isEdit ? (
+              <EditMessagePanel message={message} setIsEdit={setIsEdit} />
+            ) : (
+              <p> {content}</p>
+            )}
+          </MessageBody>
+        )}
 
         <MessagePanel>
           <DateP> {date} </DateP>
           {activeUser.id === userID ? (
             <>
-              <StyledPanelButton onClick={handleEditMessage}>
-                edit
-              </StyledPanelButton>
+              {img ? null : (
+                <StyledPanelButton onClick={handleEditMessage}>
+                  edit
+                </StyledPanelButton>
+              )}
               <StyledPanelButton onClick={() => deleteMessage(id)}>
                 delete
               </StyledPanelButton>

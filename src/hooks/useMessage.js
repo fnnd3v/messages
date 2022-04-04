@@ -1,7 +1,8 @@
-import { getTime } from "helpers/getTime";
-import { MessagesContext } from "providers/MessagesProvider";
 import { useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
+
+import { MessagesContext } from "providers/MessagesProvider";
+import { getTime } from "helpers/getTime";
 
 export const useMessage = () => {
   const { activeUser, messages, setMessages } = useContext(MessagesContext);
@@ -10,7 +11,7 @@ export const useMessage = () => {
 
   if (!messagesContext) console.log("You have to use hook inside provider");
 
-  const addNewMessage = (content, img = null) => {
+  const addNewMessage = ({ content = null, img = null }) => {
     const newMessage = {
       content,
       img,
