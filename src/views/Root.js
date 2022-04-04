@@ -1,20 +1,12 @@
 import React from "react";
 
 import App from "./App";
-import styled from "styled-components";
+import MessagesProvider from "providers/MessagesProvider";
 import { ThemeProvider } from "styled-components";
 
 import { GlobalStyle } from "assets/styles/GlobalStyle";
 import { theme } from "assets/styles/theme";
-import MessagesProvider from "providers/MessagesProvider";
-
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import { Wrapper } from "./Root.styles";
 
 const Root = () => {
   return (
