@@ -42,23 +42,10 @@ export const MessageBody = styled.div`
   }
 `;
 
-// export const ImageBody = styled.div`
-//   background-color: tomato;
-//   display: flex;
-//   width: auto;
-//   padding: 10px 20px;
-//   margin: 0 10px;
-//   max-width: 320px;
-//   height: auto;
-//   border-radius: 6px;
-//   background-size: cover;
-//   background-image: url(${({ image }) => image});
-// `;
-
 export const ImageBody = styled.img`
-  max-width: 320px;
+  max-width: 280px;
   margin: 0 10px;
-  border-radius: 6px;
+  border-radius: ${({ theme }) => theme.border.radius};
 `;
 
 export const MessagePanel = styled.div`

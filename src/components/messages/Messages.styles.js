@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.border.radius};
-  overflow: hidden;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const MessagesWrapper = styled.ul`
@@ -14,7 +14,6 @@ export const MessagesWrapper = styled.ul`
   height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   padding: 5px;
   overflow-y: scroll;
 `;

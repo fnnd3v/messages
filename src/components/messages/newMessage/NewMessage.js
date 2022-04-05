@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 import { useMessage } from "hooks/useMessage";
 import { MessagesContext } from "providers/MessagesProvider";
@@ -29,13 +29,28 @@ const NewMessage = ({
   const { deleteMessage } = useMessage();
   const { activeUser } = useContext(MessagesContext);
   const [isEdit, setIsEdit] = useState(false);
+  const wrapperRef = useRef(null);
 
   const handleEditMessage = () => {
     setIsEdit((prevState) => !prevState);
   };
 
+  const updateScroll = () => {
+    wrapperRef.current.scrollIntoView();
+  };
+
+  useEffect(() => {
+    if (img) {
+      setTimeout(() => {
+        updateScroll();
+      }, 150);
+    } else {
+      updateScroll();
+    }
+  }, []);
+
   return (
-    <Wrapper isFirstUser={isFirstUser}>
+    <Wrapper ref={wrapperRef} isFirstUser={isFirstUser}>
       <ProfilePicture src={profilePhoto} />
       <ContentWrapper>
         {img ? (

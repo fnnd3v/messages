@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import { user1 } from "data/users";
 
@@ -10,7 +10,12 @@ const MessagesProvider = ({ children }) => {
 
   return (
     <MessagesContext.Provider
-      value={{ activeUser, setActiveUser, messages, setMessages }}
+      value={{
+        activeUser,
+        setActiveUser,
+        messages,
+        setMessages,
+      }}
     >
       {children}
     </MessagesContext.Provider>

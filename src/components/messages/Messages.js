@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 
 import MessagePanel from "components/messages/messagePanel/MessagePanel";
 import NewMessage from "./newMessage/NewMessage";
@@ -10,15 +10,9 @@ import { EmptyP, MessagesWrapper, Wrapper } from "./Messages.styles";
 const Messages = () => {
   const { messages } = useContext(MessagesContext);
 
-  const wrapperRef = useRef(null);
-
-  const updateScroll = () => {
-    // wrapperRef.current.scrollTo(0);
-  };
-
   return (
     <Wrapper>
-      <MessagesWrapper ref={wrapperRef} onClick={updateScroll}>
+      <MessagesWrapper>
         {messages.length !== 0 ? (
           <>
             {messages.map((message) => {
