@@ -6,7 +6,7 @@ export const StyledForm = styled.form`
   width: auto;
   display: flex;
   min-width: 100%;
-  height: 16px;
+  height: 17px;
 
   input {
     border-radius: ${({ theme }) => theme.border.radius};

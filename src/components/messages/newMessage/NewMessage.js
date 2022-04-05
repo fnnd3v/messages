@@ -40,13 +40,8 @@ const NewMessage = ({
   };
 
   useEffect(() => {
-    if (img) {
-      setTimeout(() => {
-        updateScroll();
-      }, 150);
-    } else {
-      updateScroll();
-    }
+    if (img) return;
+    updateScroll();
   }, []);
 
   return (
@@ -54,7 +49,7 @@ const NewMessage = ({
       <ProfilePicture src={profilePhoto} />
       <ContentWrapper>
         {img ? (
-          <ImageBody src={img} />
+          <ImageBody src={img} onLoad={updateScroll} />
         ) : (
           <MessageBody isFirstUser={isFirstUser}>
             <h5>

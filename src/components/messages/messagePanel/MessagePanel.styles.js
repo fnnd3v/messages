@@ -12,12 +12,11 @@ export const Wrapper = styled.div`
 `;
 
 export const MessagePanelWrapper = styled.form`
-  padding: 20px;
+  padding: 0 20px;
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
 
   input {
     width: 85%;
