@@ -42,18 +42,25 @@ export const MessageBody = styled.div`
   }
 `;
 
-export const ImageBody = styled.div`
-  background-color: tomato;
-  display: flex;
-  width: auto;
-  padding: 10px 20px;
+// export const ImageBody = styled.div`
+//   background-color: tomato;
+//   display: flex;
+//   width: auto;
+//   padding: 10px 20px;
+//   margin: 0 10px;
+//   max-width: 320px;
+//   height: auto;
+//   border-radius: 6px;
+//   background-size: cover;
+//   background-image: url(${({ image }) => image});
+// `;
+
+export const ImageBody = styled.img`
+  max-width: 320px;
   margin: 0 10px;
-  width: 320px;
-  height: 200px;
   border-radius: 6px;
-  background-size: cover;
-  background-image: url(${({ image }) => image});
 `;
+
 export const MessagePanel = styled.div`
   display: flex;
   padding: 7px 20px 0;

@@ -39,7 +39,7 @@ const NewMessage = ({
       <ProfilePicture src={profilePhoto} />
       <ContentWrapper>
         {img ? (
-          <ImageBody isFirstUser={isFirstUser} image={img}></ImageBody>
+          <ImageBody src={img} />
         ) : (
           <MessageBody isFirstUser={isFirstUser}>
             <h5>
