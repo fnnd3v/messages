@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 
-import Messages from "components/messages/Messages";
 import { user1, user2 } from "data/users";
-import { MessagesContext } from "providers/MessagesProvider";
+import { MessagesContext } from "providers/messages-provider";
 
 import {
   StyledInput,
@@ -10,6 +9,7 @@ import {
   UserSwitchWrapper,
   Wrapper,
 } from "./App.styles";
+import Messages from "components/messages/messages";
 
 const App = () => {
   const { setActiveUser } = useContext(MessagesContext);

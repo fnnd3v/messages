@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 
-import { useMessage } from "hooks/useMessage";
-import { MessagesContext } from "providers/MessagesProvider";
+import { useMessage } from "hooks/use-message";
+import { MessagesContext } from "providers/messages-provider";
 
-import { StyledForm } from "./EditMessagePanel.styles";
+import { StyledForm } from "./edit-message-panel.styles.js";
 
 const EditMessagePanel = ({ message: { content, id }, setIsEdit }) => {
   const [messageToEdit, setMessageToEdit] = useState(content);

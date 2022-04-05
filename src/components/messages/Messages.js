@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
-import MessagePanel from "components/messages/messagePanel/MessagePanel";
-import NewMessage from "./newMessage/NewMessage";
+import { MessagesContext } from "providers/messages-provider";
+import MessagePanel from "./message-panel/message-panel";
+import NewMessage from "./new-message/new-message";
 import { user1 } from "data/users";
-import { MessagesContext } from "providers/MessagesProvider";
 
-import { EmptyP, MessagesWrapper, Wrapper } from "./Messages.styles";
+import { EmptyP, MessagesWrapper, Wrapper } from "./messages.styles";
 
 const Messages = () => {
   const { messages } = useContext(MessagesContext);

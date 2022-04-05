@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-import { useMessage } from "hooks/useMessage";
-import Gallery from "./Gallery/Gallery";
+import { useMessage } from "hooks/use-message";
+import Gallery from "./gallery/gallery";
+
 import {
   GalleryButton,
   MessagePanelWrapper,
   Wrapper,
-} from "./MessagePanel.styles";
+} from "./message-panel.styles";
 
 const MessagePanel = () => {
   const { addNewMessage } = useMessage();

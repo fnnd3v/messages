@@ -1,7 +1,7 @@
 import React from "react";
 
 import App from "./App";
-import MessagesProvider from "providers/MessagesProvider";
+import MessagesProvider from "providers/messages-provider";
 import { ThemeProvider } from "styled-components";
 
 import { GlobalStyle } from "assets/styles/GlobalStyle";

@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import { MessagesContext } from "providers/MessagesProvider";
-import { getTime } from "helpers/getTime";
+import { MessagesContext } from "providers/messages-provider";
+import { getTime } from "helpers/get-time";
 
 export const useMessage = () => {
   const { activeUser, messages, setMessages } = useContext(MessagesContext);

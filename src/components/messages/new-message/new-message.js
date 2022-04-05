@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 
-import { useMessage } from "hooks/useMessage";
-import { MessagesContext } from "providers/MessagesProvider";
-import EditMessagePanel from "./EditMessagePanel/EditMessagePanel";
+import { useMessage } from "hooks/use-message";
+import { MessagesContext } from "providers/messages-provider";
+import EditMessagePanel from "./edit-message-panel/edit-message-panel";
 
 import {
   ContentWrapper,
@@ -13,7 +13,7 @@ import {
   ProfilePicture,
   StyledPanelButton,
   Wrapper,
-} from "./NewMessage.styles";
+} from "./new-message.styles";
 
 const NewMessage = ({
   isFirstUser,

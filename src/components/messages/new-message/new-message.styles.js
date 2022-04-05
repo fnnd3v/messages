@@ -12,9 +12,7 @@ export const ProfilePicture = styled.img`
   height: 40px;
   border-radius: 50%;
 `;
-export const ContentWrapper = styled.div`
-  /* height: 50px; */
-`;
+export const ContentWrapper = styled.div``;
 
 export const MessageBody = styled.div`
   background-color: ${({ isFirstUser, theme }) =>
