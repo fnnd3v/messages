@@ -5,7 +5,7 @@ import MessagePanel from "./message-panel/message-panel";
 import NewMessage from "./new-message/new-message";
 import { user1 } from "data/users";
 
-import { NoMessages, MessagesWrapper, Wrapper } from "./messages.styles";
+import { NoMessages, MessagesWrapper, Wrapper } from "./Messages.styles";
 
 const Messages = () => {
   const { messages } = useContext(MessagesContext);

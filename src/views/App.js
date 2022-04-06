@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { user1, user2 } from "data/users";
 import { MessagesContext } from "providers/messages-provider";
-import Messages from "components/messages/messages";
+import Messages from "components/messages/Messages";
 
 import {
   StyledInput,
