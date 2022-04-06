@@ -6,7 +6,7 @@ import EditMessagePanel from "./edit-message-panel/edit-message-panel";
 
 import {
   ContentWrapper,
-  DateP,
+  SentTime,
   ImageBody,
   MessageBody,
   MessagePanel,
@@ -15,21 +15,21 @@ import {
   Wrapper,
 } from "./new-message.styles";
 
-const NewMessage = ({
-  isFirstUser,
-  message,
-  message: {
+const NewMessage = ({ isFirstUser, message }) => {
+  const wrapperRef = useRef(null);
+
+  const { deleteMessage } = useMessage();
+  const { activeUser } = useContext(MessagesContext);
+
+  const [isEdit, setIsEdit] = useState(false);
+
+  const {
     content,
     date,
     img,
     id,
     user: { name, surname, profilePhoto, id: userID },
-  },
-}) => {
-  const { deleteMessage } = useMessage();
-  const { activeUser } = useContext(MessagesContext);
-  const [isEdit, setIsEdit] = useState(false);
-  const wrapperRef = useRef(null);
+  } = message;
 
   const handleEditMessage = () => {
     setIsEdit((prevState) => !prevState);
@@ -48,26 +48,26 @@ const NewMessage = ({
     <Wrapper ref={wrapperRef} isFirstUser={isFirstUser}>
       <ProfilePicture src={profilePhoto} />
       <ContentWrapper>
-        {img ? (
-          <ImageBody src={img} onLoad={updateScroll} />
-        ) : (
-          <MessageBody isFirstUser={isFirstUser}>
-            <h5>
-              {name} {surname}
-            </h5>
-            {isEdit ? (
-              <EditMessagePanel message={message} setIsEdit={setIsEdit} />
-            ) : (
-              <p> {content}</p>
-            )}
-          </MessageBody>
-        )}
-
+        <>
+          {img && <ImageBody src={img} onLoad={updateScroll} />}
+          {!img && (
+            <MessageBody isFirstUser={isFirstUser}>
+              <h5>
+                {name} {surname}
+              </h5>
+              {isEdit ? (
+                <EditMessagePanel message={message} setIsEdit={setIsEdit} />
+              ) : (
+                <p> {content}</p>
+              )}
+            </MessageBody>
+          )}
+        </>
         <MessagePanel>
-          <DateP> {date} </DateP>
+          <SentTime> {date} </SentTime>
           {activeUser.id === userID ? (
             <>
-              {img ? null : (
+              {!img && (
                 <StyledPanelButton onClick={handleEditMessage}>
                   edit
                 </StyledPanelButton>

@@ -18,18 +18,6 @@ export const MessagePanelWrapper = styled.form`
   justify-content: space-between;
   align-items: center;
 
-  input {
-    width: 85%;
-    height: 50px;
-    border-radius: ${({ theme }) => theme.border.radius};
-    border: none;
-    padding: 5px 15px;
-
-    :focus {
-      outline: none;
-    }
-  }
-
   button {
     width: 40px;
     height: 40px;
@@ -40,6 +28,19 @@ export const MessagePanelWrapper = styled.form`
     border: none;
     cursor: pointer;
     border-radius: 50%;
+  }
+`;
+
+export const StyledInput = styled.input`
+  width: 85%;
+  height: 50px;
+  border-radius: ${({ theme }) => theme.border.radius};
+  border: ${({ noMessageError }) =>
+    noMessageError ? "1px solid red" : "none"};
+  padding: 5px 15px;
+
+  :focus {
+    outline: none;
   }
 `;
 

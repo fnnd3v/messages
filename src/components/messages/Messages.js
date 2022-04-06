@@ -5,29 +5,28 @@ import MessagePanel from "./message-panel/message-panel";
 import NewMessage from "./new-message/new-message";
 import { user1 } from "data/users";
 
-import { EmptyP, MessagesWrapper, Wrapper } from "./messages.styles";
+import { NoMessages, MessagesWrapper, Wrapper } from "./messages.styles";
 
 const Messages = () => {
   const { messages } = useContext(MessagesContext);
 
+  const showMessages = messages.length !== 0;
+  const showNoContent = messages.length === 0;
+
   return (
     <Wrapper>
       <MessagesWrapper>
-        {messages.length !== 0 ? (
-          <>
-            {messages.map((message) => {
-              return (
-                <NewMessage
-                  key={message.id}
-                  isFirstUser={message.user.id === user1.id ? true : false}
-                  message={message}
-                />
-              );
-            })}
-          </>
-        ) : (
-          <EmptyP>Start conversation...</EmptyP>
-        )}
+        {showMessages &&
+          messages.map((message) => {
+            return (
+              <NewMessage
+                key={message.id}
+                isFirstUser={message.user.id === user1.id}
+                message={message}
+              />
+            );
+          })}
+        {showNoContent && <NoMessages>Start conversation...</NoMessages>}
       </MessagesWrapper>
       <MessagePanel />
     </Wrapper>

@@ -4,7 +4,7 @@ import App from "./App";
 import MessagesProvider from "providers/messages-provider";
 import { ThemeProvider } from "styled-components";
 
-import { GlobalStyle } from "assets/styles/GlobalStyle";
+import { GlobalStyle } from "assets/styles/global-styled";
 import { theme } from "assets/styles/theme";
 import { Wrapper } from "./Root.styles";
 

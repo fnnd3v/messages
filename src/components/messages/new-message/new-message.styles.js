@@ -55,7 +55,7 @@ export const MessagePanel = styled.div`
   color: ${({ theme }) => theme.colors.messagePanel};
 `;
 
-export const DateP = styled.p`
+export const SentTime = styled.p`
   padding-right: 10px;
 `;
 export const StyledPanelButton = styled.button`

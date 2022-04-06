@@ -9,7 +9,7 @@ export const useMessage = () => {
 
   const messagesContext = useContext(MessagesContext);
 
-  if (!messagesContext) console.log("You have to use hook inside provider");
+  if (!messagesContext) console.error("You have to use hook inside provider");
 
   const addNewMessage = ({ content = null, img = null }) => {
     const newMessage = {

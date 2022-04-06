@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { user1, user2 } from "data/users";
 import { MessagesContext } from "providers/messages-provider";
+import Messages from "components/messages/messages";
 
 import {
   StyledInput,
@@ -9,16 +10,13 @@ import {
   UserSwitchWrapper,
   Wrapper,
 } from "./App.styles";
-import Messages from "components/messages/messages";
 
 const App = () => {
   const { setActiveUser } = useContext(MessagesContext);
 
   const handleSwitchUser = (e) => {
-    if (e.target.checked) setActiveUser(user2);
-    else {
-      setActiveUser(user1);
-    }
+    const currentUser = e.target.checked ? user2 : user1;
+    setActiveUser(currentUser);
   };
 
   return (

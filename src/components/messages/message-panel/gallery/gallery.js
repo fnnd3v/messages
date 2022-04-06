@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 
 import { useMessage } from "hooks/use-message";
 import { FetchImages } from "api/images-api";
-import Loading from "components/loading/loading";
+import Loading from "components/loading/loader";
 
 import { Wrapper } from "./gallery.styles";
 
 const Gallery = ({ setIsGalleryOpen }) => {
   const { addNewMessage } = useMessage();
+
   const [images, setImages] = useState([]);
 
   const handleSendImage = (image) => {

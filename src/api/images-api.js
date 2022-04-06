@@ -1,6 +1,7 @@
 import axios from "axios";
-
-const API_KEY = process.env.REACT_APP_UNSPLASH_KEY;
+import { environment } from "config/environment";
 
 export const FetchImages = async () =>
-  await axios.get(`https://api.unsplash.com/photos/?client_id=${API_KEY}`);
+  await axios.get(
+    `https://api.unsplash.com/photos/?client_id=${environment.UNSPLASH_KEY}`
+  );

@@ -33,7 +33,7 @@ export const MessagesWrapper = styled.ul`
   }
 `;
 
-export const EmptyP = styled.p`
+export const NoMessages = styled.p`
   margin: 40px auto;
   color: ${({ theme }) => theme.colors.messagePanel};
 `;

@@ -6,11 +6,13 @@ import { MessagesContext } from "providers/messages-provider";
 import { StyledForm } from "./edit-message-panel.styles.js";
 
 const EditMessagePanel = ({ message: { content, id }, setIsEdit }) => {
-  const [messageToEdit, setMessageToEdit] = useState(content);
-  const { activeUser } = useContext(MessagesContext);
-  const { editMessage } = useMessage();
   const inputRef = useRef(null);
   const isInitialMount = useRef(true);
+
+  const { activeUser } = useContext(MessagesContext);
+  const { editMessage } = useMessage();
+
+  const [messageToEdit, setMessageToEdit] = useState(content);
 
   useEffect(() => {
     if (isInitialMount.current) {

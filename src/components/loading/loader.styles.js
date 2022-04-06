@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-import React from "react";
-
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
@@ -41,16 +39,3 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-const Loading = () => {
-  return (
-    <Wrapper>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </Wrapper>
-  );
-};
-
-export default Loading;
